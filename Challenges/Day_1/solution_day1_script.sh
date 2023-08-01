@@ -3,28 +3,28 @@
 # First line of the script is the shebang which tells the system how to execute
 
 # Task  2: Echo
-echo "Scripting is fun with @TWS"
+echo "Scripting is fun and this is the Day_1 of BASH SCRIPTING CHALLENGES"
 
 # Task  3: Variables
 variable1="Hello"
-variable2="Bash"
+variable2="World"
 
 # Task  4: Using Variables
-greeting="$variable1, $variable2!"
-echo "$greeting Welcome to the world of Bash scripting!"
+read -p "Enter the first number: " variable1
+read -p "Enter the second number: " variable2
+sum=$(expr "$variable1" + "$variable2")
+echo "The sum of $variable1 and $variable2 is: $sum"
 
 # Task  5: Using Built-in Variables
-echo "My current bash path - $BASH"
-echo "Bash version I am using - $BASH_VERSION"
-echo "PID of bash I am running - $$"
-echo "My home directory - $HOME"
-echo "Where am I currently? - $PWD"
-echo "My hostname - $HOSTNAME"
+current_date=$(date +"%Y-%m-%d %H:%M:%S")
+echo "Current date and time: $current_date"
+echo "Currently running script: ${BASH_SOURCE[0]}"
+echo "Process ID of the current script: $$"
 
 # Task  6: Wildcards
-echo "Files with .txt extension in the current directory:"
-ls *.txt
-
+read -p "Enter the directory path: " directory_path
+read -p "Enter the file extension to list (without the dot): " file_extension
+ls "$directory_path"/*."$file_extension"
 
 
 #Make sure to provide execution permission with the following command:
